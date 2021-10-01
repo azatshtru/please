@@ -1,7 +1,7 @@
 ## please.rip💜
 a microscopic open-source _raw-web-aesthetic_ social space [_in development_]
 
-~_made with reactjs, firebase and love~❤️_
+_made with reactjs, firebase and love~❤️_
 
 ##### 📜 current status
 - no auth :(
