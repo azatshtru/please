@@ -13,8 +13,8 @@ _made with reactjs, firebase and love~❤️_
 &nbsp;&nbsp; _you will need `node` and `npm` installed globally on your pc~_
 
 ##### initial steps
-&nbsp; 1️⃣ clone this repo
-&nbsp; 2️⃣ open terminal in folder
+&nbsp; 1️⃣ clone this repo <br />
+&nbsp; 2️⃣ open terminal in folder <br />
 &nbsp; 3️⃣ install firebase
 
 ```sh
