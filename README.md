@@ -15,7 +15,12 @@ _made with reactjs, firebase and love~❤️_
 ##### initial steps
 &nbsp; 1️⃣ clone this repo
 &nbsp; 2️⃣ open terminal in folder
-&nbsp; 3️⃣ navigate to src
+&nbsp; 3️⃣ install firebase
+
+```sh
+npm install firebase
+```
+&nbsp; 4️⃣ navigate to src
 
 ```sh
 cd src
