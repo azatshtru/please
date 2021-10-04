@@ -10,7 +10,8 @@ _made with reactjs, firebase and love~❤️_
 #### 🚀 setup
 
 ##### pre-reqs 
-&nbsp;&nbsp; _you will need `node` and `npm` installed globally on your pc~_
+&nbsp; 1️⃣ _you will need `node` and `npm` installed globally on your pc~_ <br />
+&nbsp; 2️⃣ _you will need a `firebase` account with `realtime database` enabled~_
 
 ##### initial steps
 &nbsp; 1️⃣ clone this repo <br />
@@ -20,7 +21,20 @@ _made with reactjs, firebase and love~❤️_
 ```sh
 npm install firebase
 ```
-&nbsp; 4️⃣ navigate to src
+
+&nbsp; 4️⃣ create a `.env` file and paste the following code in it, replace values with your `API_KEYS` from firebase console
+
+```
+REACT_APP_FIREBASE_API_KEY=value
+REACT_APP_FIREBASE_AUTH_DOMAIN=value
+REACT_APP_FIREBASE_DATABASE_URL=value
+REACT_APP_FIREBASE_PROJECT_ID=value
+REACT_APP_FIREBASE_STORAGE_BUCKET=value
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=value
+REACT_APP_FIREBASE_APP_ID=value
+REACT_APP_FIREBASE_MEASUREMENT_ID=value
+```
+&nbsp; 5️⃣ navigate to src
 
 ```sh
 cd src

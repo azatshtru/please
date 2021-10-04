@@ -24,7 +24,12 @@ function UsernameInput(props){
   return(
     <form>
       <div>
+        <label>username</label>
         <input type="text" name="username" value={props.user} onChange={(event) => props.onChange(event.target.value)}/>
+      </div>
+      <div>
+        <lable>room_code</lable>
+        <input type="text" name="roomcode" value={props.roomcode} onChange={(event) => props.onChangeRoom(event.target.value)}/>
       </div>
       <div>
         <input type="submit" value={'Sign In'} onClick={(event) => {
@@ -41,11 +46,15 @@ function TextLabel(props){
 }
 
 function TextsContainer(props){
-  if (props.texts == null){
+  if(props.texts == null){
     return (<ol><li>{"💜please."}</li></ol>);
   }
+  if (props.texts[props.room] == null){
+    return (<ol><li>{"💜please."+props.room}</li></ol>);
+  }
   const textrows = []
-  for (let [key, value] of Object.entries(props.texts)) {
+  for (let [key, value] of Object.entries(props.texts[props.room])) {
+    
     textrows.push(<TextLabel key={key} name={value['user']} text={value['text']} />);
   }
 
@@ -68,7 +77,7 @@ function TextInput(props){
 function Core(props) {
   return (
     <div>
-      <TextsContainer texts={props.texts} />
+      <TextsContainer texts={props.texts} room={props.room} />
       <TextInput text={props.text} onChange={(txt) => props.onChange(txt)} onClick={() => props.onClick()} />
     </div>
   )
@@ -79,6 +88,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       user: '',
+      room: '',
       signedIn: false,
       text: '',
     }
@@ -88,7 +98,12 @@ class App extends React.Component {
     this.setState({user: username});
   }
 
+  handleRoomcodeInput(roomcode){
+    this.setState({room: roomcode});
+  }
+
   handleSignIn(){
+    if(this.state.user === '' || this.state.room === ''){ return; }
     this.setState({signedIn: true});
   }
 
@@ -98,7 +113,7 @@ class App extends React.Component {
 
   handleSend(){
     if(this.state.text === ""){ return; }
-    set(push(ref(database, 'texts')), {
+    set(push(ref(database, 'texts/'+this.state.room)), {
       user: this.state.user,
       text: this.state.text,
     });
@@ -110,14 +125,17 @@ class App extends React.Component {
       <div>
         {this.state.signedIn ? 
           <Core 
-            texts={this.props.texts} 
+            texts={this.props.texts}
+            room={this.state.room}
             text={this.state.text} 
             onChange={(text) => this.handleTextInput(text)} 
             onClick={() => this.handleSend()}
           /> :
           <UsernameInput 
             user={this.state.user} 
+            roomcode={this.state.room}
             onChange={(user) => this.handleUsernameInput(user)} 
+            onChangeRoom={(room) => this.handleRoomcodeInput(room)}
             onClick={() => this.handleSignIn()}
           />
         }
