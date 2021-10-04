@@ -5,7 +5,7 @@ _made with reactjs, firebase and love~❤️_
 
 ##### 📜 current status
 - no auth :(
-- open space/single chatroom (_group codes in progress_) -_-
+- rooms with group codes :) _yayy!_
 
 #### 🚀 setup
 
