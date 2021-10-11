@@ -1,0 +1,106 @@
+body {
+    background: rgb(240, 240, 240);
+}
+
+.signin{    
+    display: grid;
+    gap: 0.4rem;
+
+    grid-template-columns: 1fr 310px 4fr;
+    grid-template-rows: 1fr 37px 37px 45px 2.5fr;
+
+    height: 100vh;
+}
+
+.usernamefield{
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.usernamefield input {
+    outline: none;
+    border: none;
+
+    box-sizing: border-box;
+    border-width: 0;
+
+    color: aliceblue;
+    border-radius: 2px;
+    box-shadow: inset 2px 2px 5px rgb(230, 230, 230),
+                inset -5px -5px 10px rgb(247, 247, 247);
+    color: black;
+    width: 100%;
+    height: 100%;
+    font-size: 0.9rem;
+
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 10px;
+}
+
+.usernamefield input:hover {
+    box-shadow: inset 2px 2px 5px #e0e7ff,
+                inset -1px -1px 2px #fdfdfd73;
+}
+
+.roomfield{
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.roomfield input {
+    outline: none;
+    border: none;
+    color: aliceblue;
+
+    box-sizing: border-box;
+    border-width: 0;
+
+    border-radius: 2px;
+    box-shadow: inset 2px 2px 5px rgb(238, 238, 238),
+                inset -5px -5px 10px rgb(247, 247, 247);
+    color: black;
+    width: 100%;
+    height: 100%;
+    font-size: 0.9rem;
+    
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 10px;
+}
+
+.roomfield input:hover {
+    box-shadow: inset 2px 2px 5px #e0e7ff,
+                inset -1px -1px 2px #ffffff73;
+}
+
+.submitbutton{
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+}
+
+.submitbutton input{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 2px;
+    border-width: 0;
+    outline: none;
+    box-sizing: border-box;
+    background: #e7e7e7;
+    box-shadow: 2px 2px 5px #babecc,
+                -5px -5px 10px #b9b9b973;
+    color: rgb(37, 37, 37);
+
+    transition: background 0.5s, box-shadow 1s, color 0.25s;
+
+    font-weight: 800;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.submitbutton > input:hover{
+    background: #1a1a1a;
+    box-shadow: 2px 2px 5px #d4d4d4,
+                -5px -5px 10px #ffffff73;
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    height: 100%;
+    background: rgb(0, 0, 0);
+    background-image: url("./jason-leung.jpg");
+
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media (orientation: portrait) {
+    body{
+        background-size: auto 100%;
+    }
+}
+
+@media (orientation: landscape) {
+    body{
+        background-size: 100% auto;
+    }
+}
+
+.signin{    
+    display: grid;
+    gap: 0.6rem;
+
+    grid-template-columns: 1.6fr 20rem 1fr 3fr;
+    grid-template-rows: 10rem 4rem 4rem 6rem 2fr;
+
+    height: 100vh;
+}
+
+.bginit {
+    grid-column: 2 / span 1;
+    grid-row: 1 / 6;
+
+    z-index: 0;
+}
+
+.bginit > div {
+    background: black;
+    border-radius: 6px;
+    opacity: 40%;
+    width: 105%;
+    position: relative;
+    right: 0.5rem;
+    top: 10rem;
+    height: 16.4rem;
+}
+
+.usernamefield{
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    z-index: 20;
+}
+
+.usernamefield > input{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 2px;
+    box-sizing: border-box;
+    border-width: 0;
+    outline: none;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+
+    transition: background 0.7s, box-shadow 1.4s, color 0.25s;
+
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.usernamefield > input::placeholder{
+    color: #b9b9b9;
+}
+
+.roomfield{
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+    z-index: 20;
+}
+
+.roomfield > input{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 2px;
+    border-width: 0;
+    outline: none;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+
+    transition: background 0.7s, box-shadow 1.4s, color 0.25s;
+
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.roomfield > input::placeholder{
+    color: #b9b9b9;
+}
+
+.submitbutton{
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+    z-index: 20;
+
+}
+
+.submitbutton > input{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 4px;
+    border-width: 0;
+    background: #022cff;
+    box-shadow: inset -20px -20px 70px #0024d8,
+                inset 20px 20px 80px #7790ff;
+    color: white;
+
+    transition: background 0.5s, box-shadow 1s, color 0.25s;
+
+    font-weight: 900;
+    font-size: 1.4rem;
+    font-family: 'Montserrat Black', sans-serif;
+
+}
+
+.submitbutton > input:hover{
+    background: #ff1717;
+    box-shadow: inset -20px -20px 80px #9900ff,
+                inset 20px 20px 80px #63009c;
+    color: rgb(255, 255, 255);
+}
+
+.container {
+    background: black;
+    color: white;
+}

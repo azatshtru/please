@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import './App.css';
+import './neu.css';
 
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, onValue, push, query, limitToLast, set } from 'firebase/database';
+import { getDatabase, ref, onValue, push, query, set } from 'firebase/database';
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -23,19 +24,20 @@ const database = getDatabase();
 function UsernameInput(props){
   return(
     <form>
-      <div>
-        <label>username</label>
-        <input type="text" name="username" value={props.user} onChange={(event) => props.onChange(event.target.value)}/>
-      </div>
-      <div>
-        <lable>room_code</lable>
-        <input type="text" name="roomcode" value={props.roomcode} onChange={(event) => props.onChangeRoom(event.target.value)}/>
-      </div>
-      <div>
-        <input type="submit" value={'Sign In'} onClick={(event) => {
-          event.preventDefault();
-          props.onClick();
-        }} /> 
+      <div className="signin">
+        <div className="bginit"><div></div></div>
+        <div className="usernamefield">
+          <input type="text" placeholder={"username"} name="username" value={props.user} onChange={(event) => props.onChange(event.target.value)}/>
+        </div>
+        <div className="roomfield">
+          <input type="text" placeholder={"roomcode"} name="roomcode" value={props.roomcode} onChange={(event) => props.onChangeRoom(event.target.value)}/>
+        </div>
+        <div className="submitbutton">
+          <input type="submit" value={'Join Room'} onClick={(event) => {
+            event.preventDefault();
+            props.onClick();
+          }} /> 
+        </div>
       </div>
     </form>
   );
@@ -77,7 +79,7 @@ function TextInput(props){
 function Core(props) {
   return (
     <div>
-      <TextsContainer texts={props.texts} room={props.room} />
+      <div className="container"><TextsContainer texts={props.texts} room={props.room} /></div>
       <TextInput text={props.text} onChange={(txt) => props.onChange(txt)} onClick={() => props.onClick()} />
     </div>
   )
@@ -139,13 +141,12 @@ class App extends React.Component {
             onClick={() => this.handleSignIn()}
           />
         }
-        
       </div>
     )
   }
 }
 
-const textsRef = query(ref(database, 'texts/'), limitToLast(12));
+const textsRef = query(ref(database, 'texts/'));
 onValue(textsRef, (snapshot) => {
   const textData = snapshot.val();
   ReactDOM.render(
