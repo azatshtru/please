@@ -55,7 +55,8 @@ function TextsContainer(props){
     return (<ol><li>{"💜please."+props.room}</li></ol>);
   }
   const textrows = []
-  for (let [key, value] of Object.entries(props.texts[props.room])) {
+  const entries = Object.entries(props.texts[props.room]);
+  for (let [key, value] of entries.slice((entries.length > 32) ? entries.length - 32 : 0, entries.length)) {
     
     textrows.push(<TextLabel key={key} name={value['user']} text={value['text']} />);
   }
